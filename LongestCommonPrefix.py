@@ -1,7 +1,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         answer = ""
-        firstword = strs[0]
+        firstword = min(strs,key=len)
         index = 0
         for i in firstword:
             for j in strs:
