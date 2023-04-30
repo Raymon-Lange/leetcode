@@ -12,63 +12,52 @@
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode ptr1 = l1; // pointer to traverse l1
+        ListNode ptr2 = l2; // pointer to traverse l2
+        ListNode answer = null;
+        int carry = 0;
 
-        String firstNumber = new String();
-        String secoundNumber = new String();
-        //Step: First covernt the link list to string
-        Boolean exit = false;
-        ListNode temp = l1;
-        do
+        //STEP: The 1st node is always going to be ones node
+
+        while(ptr1 != null || ptr2 != null || carry != 0)
         {
-            firstNumber += String.valueOf(temp.val);
-            temp = temp.next;
+            int temp = carry;
 
-        }while(temp != null);
+            //STEP: Check if pointer is null just sumbiut the value. 
+            if(ptr1 != null)
+            {
+                temp += ptr1.val;
+                ptr1 = ptr1.next;
+            }
 
-        temp = l2;
-        do
-        {
-            secoundNumber += String.valueOf(temp.val);
-            temp = temp.next;
+            if(ptr2 != null)
+            {
+                temp += ptr2.val;
+                ptr2 = ptr2.next;
+            }
 
-        }while(temp != null);
-        
-        System.out.println(firstNumber);
-        System.out.println(secoundNumber);
+            //STEP: use the % op instead of comparsion for speed and return 1 if ten 
 
-        //Step: Than resverse  the string 
+             carry = temp / 10; 
+            
+            ListNode dum = new ListNode(temp %10 );
 
-    
-        firstNumber = new StringBuilder(firstNumber).reverse().toString();
-        secoundNumber = new StringBuilder(secoundNumber).reverse().toString();
+            dum.next = answer;
+            answer = dum;
+        }
 
-        //Step: convert to a int 
+        //STEP: Reserse a link list
 
-        long num1 = Long.parseLong(firstNumber); 
-        long num2 = Long.parseLong(secoundNumber);
+        ListNode prev = null;
+        ListNode next = null;
+        while (answer != null) {
+            next = answer.next;
+            answer.next = prev;
+            prev = answer;
+            answer = next;
+        }
+        answer = prev;
 
-
-        //Step: do math
-
-        long answer = num1 + num2;
-
-        //Step: conver to string 
-
-        String finalAnswer = String.valueOf(answer);
-        System.out.println(finalAnswer);
-        ListNode value = null;
-
-         for (int i = 0; i <= finalAnswer.length() -1; i++)
-         {
-             ListNode dum = new ListNode(Character.getNumericValue(finalAnswer.charAt(i)));
-
-             dum.next = value;
-
-             value = dum;
-         }
-
-
-        return value;
-        
+        return answer; 
     }
 }
