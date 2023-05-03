@@ -3,7 +3,7 @@
 ## Executive Summary 
 My project involves tackling problems on LeetCode to assess my proficiency with the programming languages listed on my resume.
 
-##The Project
+## The Project
 
 While assisting a recent college graduate with an interview, I suggested they solve a typical coding challenge in a language they were comfortable with. After the challenge, I was asked which language I would have chosen to solve the problem and how many languages I knew and sparked a discussion about resumes, how recruiters locate potential candidates, and how they review them. I recommended that the individual include any programming language they were confident in using, just like the one we solved earlier. 
 
