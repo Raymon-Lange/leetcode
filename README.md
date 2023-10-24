@@ -23,3 +23,11 @@ For each problem role, a die to pick the language I have to solve the problem.
 In the 1st commit history, you can find the prompt for the problem. 
 
 The goal is not to come up with the best answer possible but to be able to solve the problem. 
+
+## Results
+
+
+![30days](https://github.com/Raymon-Lange/leetcode/assets/104854233/600f0395-82b9-4707-b3c9-cfc7f3b49201)
+
+
+![Languages](https://github.com/Raymon-Lange/leetcode/assets/104854233/c186d7de-aefd-417c-8b99-dfaaac4d1819)
